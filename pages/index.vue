@@ -10,6 +10,7 @@ export default {
 
 <template>
   <div>
+    <h1>This is a Title</h1>
     <p>{{ test }}</p>
   </div>
 </template>
