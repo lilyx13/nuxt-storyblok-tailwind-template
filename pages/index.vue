@@ -2,15 +2,14 @@
 export default {
   name: 'IndexPage',
   setup() {
-    const test = 'Test Text'
-    return { test }
+    const pageInfo = { name: 'Home', description: 'This is the Home Page' }
+    return { pageInfo }
   }
 }
 </script>
 
 <template>
   <div>
-    <h1>This is a Title</h1>
-    <p>{{ test }}</p>
+    <AppHeader />
   </div>
 </template>
