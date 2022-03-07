@@ -1,10 +1,3 @@
-<template>
-  <header>
-    <h2>{{ capitalizedTitle }}</h2>
-    <p>{{ description }}</p>
-    <p>{{ fullName }}</p>
-  </header>
-</template>
 <script>
 import { defineComponent, ref, computed } from '@vue/composition-api'
 export default defineComponent({
@@ -12,23 +5,29 @@ export default defineComponent({
     info: {
       type: Object,
       default() {
-        return { name: 'Hello' }
+        return { title: 'Standard Header' }
       }
     }
   },
   setup(props) {
-    const capitalizedTitle = ref(props.info.name.toUpperCase())
-    const description = 'A bunch of stuff'
-    const firstName = 'jane'
-    const lastName = 'doe'
+    const capitalizedTitle = ref(props.info.title.toUpperCase())
+
+    // Playing with names
+    const firstName = ref('')
+    const lastName = ref('')
     const fullName = computed(() => {
-      return `${firstName}${lastName}`
+      return `${firstName} ${lastName}`
     })
     return {
-      description,
-      fullName,
-      capitalizedTitle
+      capitalizedTitle,
+      fullName
     }
   }
 })
 </script>
+
+<template>
+  <header class="my-10 text-center">
+    <h2>{{ capitalizedTitle }}</h2>
+  </header>
+</template>
